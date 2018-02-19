@@ -1,0 +1,15 @@
+[
+    {
+        "symbol": "BRZBW_LCOIN",
+        "buy": {
+            "game": "minescape-legacy",
+            "item": "legacy.weapon.bronze_bow",
+            "name": "Bronze Bow"
+        },
+        "sell": {
+            "game": "minescape-legacy",
+            "item": "legacy.misc.coins",
+            "name": "Coins"
+        }
+    }
+]

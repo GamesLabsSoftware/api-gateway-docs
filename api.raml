@@ -1,0 +1,99 @@
+#%RAML 1.0
+---
+title: GamesLabs API
+baseUri: https://kernel.minescape.net/1.0.0
+version: 1.0.0
+
+securitySchemes:
+  jwt:
+    description: |
+      This API supports JWT Authentication.
+    type: JWT Authentication
+
+/codes:
+  description: Temporary codes
+  /{id}:
+    uriParameters:
+      id: The id of the temporary code
+    get:
+      description: |
+        Get a code from a given id. This code is temporary.
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                !include examples/codes/get/response.json
+
+/exchange:
+  description: Grand Exchange
+  get:
+    description: |
+      Get the list of all current symbols.
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              !include examples/exchange/get/response.json
+  /symbol/{symbol}:
+    uriParameters:
+      symbol: The target market
+    get:
+      description: |
+        Get the order book of a given symbol.
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                !include examples/exchange/symbol/id/get/response.json
+    post:
+      securedBy: [jwt]
+      description: |
+        Create a new order for a given symbol. The user must have the items in his inventory.
+      body:
+        application/json:
+          example:
+            !include examples/exchange/symbol/id/post/request.json
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                !include examples/exchange/symbol/id/post/response.json
+    /candles:
+      get:
+        description: |
+          Get the candles of the current symbol.
+        queryParameters:
+          count:
+            description: "The amount of candles. Max is 500"
+            required: false
+            type: integer
+          timestamp:
+            description: "The timestamp of the first candle"
+            required: false
+            type: integer
+          timeFrame:
+            description: "The time frame of a candle"
+            required: false
+            type: string
+        responses:
+          200:
+            body:
+              application/json:
+                example:
+                  !include examples/exchange/symbol/id/candles/get/response.json
+    /user/{user}:
+      uriParameters:
+        user: The id of the user
+      get:
+        description: |
+          Get the current orders of a user.
+        responses:
+          200:
+            body:
+              application/json:
+                example:
+                  !include examples/exchange/symbol/id/user/id/get/response.json

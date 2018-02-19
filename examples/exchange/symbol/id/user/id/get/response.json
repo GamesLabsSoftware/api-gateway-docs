@@ -1,0 +1,22 @@
+{
+    "buy": [
+        {
+            "id": "5a8a9bfc032fc3001a78db26",
+            "amount": 1,
+            "price": 1,
+            "user": "user1",
+            "symbol": "BRZBW_LCOIN",
+            "timestamp": 1519033340524
+        }
+    ],
+    "sell": [
+      {
+          "id": "5a8a9bfc032fc3001a78db27",
+          "amount": 1,
+          "price": 2,
+          "user": "user2",
+          "symbol": "BRZBW_LCOIN",
+          "timestamp": 1519033330544
+      }
+    ]
+}

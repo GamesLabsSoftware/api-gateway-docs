@@ -1,0 +1,26 @@
+{
+  "name": "api-gateway-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "build": "raml2html api.raml > generated/api.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GamesLabsSoftware/api-gateway-docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GamesLabsSoftware/api-gateway-docs/issues"
+  },
+  "homepage": "https://github.com/GamesLabsSoftware/api-gateway-docs#readme",
+  "dependencies": {
+    "raml2html": "^6.7.0",
+    "raml2html-markdown-theme": "^1.0.2"
+  }
+}

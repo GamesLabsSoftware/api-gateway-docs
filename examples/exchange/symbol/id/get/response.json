@@ -1,0 +1,11 @@
+[
+    {
+        "id": "5a8a9bfc032fc3001a78db26",
+        "type": "buy",
+        "amount": 1,
+        "price": 1,
+        "user": "user1",
+        "symbol": "BRZBW_LCOIN",
+        "timestamp": 1519033340524
+    }
+]
